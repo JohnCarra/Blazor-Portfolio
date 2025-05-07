@@ -147,3 +147,51 @@ section {
         transform: translateY(-2px);
         box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
 }
+.typewriter-text {
+    font-size: 1.25rem;
+    font-weight: 500;
+    border-right: 2px solid white;
+    white-space: nowrap;
+    overflow: hidden;
+    animation: blink-caret 0.8s step-end infinite;
+    min-height: 1.5rem;
+}
+
+@keyframes blink-caret {
+    0%, 100% {
+        border-color: transparent;
+    }
+
+    50% {
+        border-color: white;
+    }
+}
+
+@keyframes bounceIn {
+    0% {
+        opacity: 0;
+        transform: translateY(40px);
+    }
+
+    60% {
+        opacity: 1;
+        transform: translateY(-10px);
+    }
+
+    80% {
+        transform: translateY(5px);
+    }
+
+    100% {
+        transform: translateY(0);
+    }
+}
+
+.bounce-button {
+    animation: bounceIn 0.8s ease-out both;
+}
+
+.bounce-delay {
+    animation-delay: 0.3s;
+}
+

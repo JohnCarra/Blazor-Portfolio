@@ -1,0 +1,59 @@
+﻿
+<span class="typewriter-text">@displayText</span>
+
+@code {
+    private string displayText = "";
+    private int charIndex = 0;
+    private int wordIndex = 0;
+
+    private readonly string[] phrases = new[]
+    {
+        "C# Developer",
+        ".NET Core Specialist",
+        "Blazor WebAssembly Pro",
+        "Cloud Automation Enthusiast"
+    };
+
+    private System.Timers.Timer? timer;
+
+    protected override void OnInitialized()
+    {
+        StartTyping();
+    }
+
+    private void StartTyping()
+    {
+        timer = new System.Timers.Timer(100);
+        timer.Elapsed += OnTimerElapsed;
+        timer.Start();
+    }
+
+    private void OnTimerElapsed(object? sender, System.Timers.ElapsedEventArgs e)
+    {
+        if (charIndex < phrases[wordIndex].Length)
+        {
+            displayText += phrases[wordIndex][charIndex];
+            charIndex++;
+        }
+        else
+        {
+            timer?.Stop();
+            Task.Delay(1500).ContinueWith(_ =>
+            {
+                displayText = "";
+                charIndex = 0;
+                wordIndex = (wordIndex + 1) % phrases.Length;
+                timer?.Start();
+                InvokeAsync(StateHasChanged);
+            });
+            return;
+        }
+
+        InvokeAsync(StateHasChanged);
+    }
+
+    public void Dispose()
+    {
+        timer?.Dispose();
+    }
+}
