@@ -1,17 +1,53 @@
 ﻿@page "/projects"
 
 <section class="container py-5">
-    <h2 class="mb-4">Featured Project</h2>
+    <h2 class="mb-4">Projects</h2>
 
-    <p>This portfolio site is built with Blazor WebAssembly and showcases my ability to design, structure, and deploy modern C# web apps.</p>
+    <div class="row g-5">
+        <!-- Productivity Dashboard -->
+        <div class="col-md-6">
+            <div class="card shadow-sm h-100">
+                <div class="card-body">
+                    <h5 class="card-title">Productivity Dashboard</h5>
+                    <p class="card-text">
+                        A modern C# WinForms-based productivity dashboard that allows users to manage tasks using a PostgreSQL backend.
+                    </p>
+                    <ul class="list-unstyled">
+                        <li>✅ Add, edit, and delete tasks</li>
+                        <li>✅ PostgreSQL integration using Npgsql</li>
+                        <li>✅ Responsive UI with Segoe UI styling</li>
+                        <li>✅ Task list auto-refreshes after any operation</li>
+                        <li>✅ Edit existing tasks via double-click</li>
+                    </ul>
+                    <a href="https://github.com/JohnCarra/Productivity-Dashboard" target="_blank" class="btn btn-outline-primary mt-3">
+                        View on GitHub
+                    </a>
+                </div>
+            </div>
+        </div>
 
-    <ul class="list-unstyled mt-3">
-        <li>✅ <strong>.NET 8 + Blazor WebAssembly</strong> front-end</li>
-        <li>🚀 Deployed via <strong>GitHub Actions</strong> to Azure</li>
-        <li>🎨 Styled using Bootstrap 5 and custom CSS</li>
-    </ul>
-
-    <a href="https://happy-hill-0a1a08910.6.azurestaticapps.net/" target="_blank" class="btn btn-outline-primary mt-4">
-        View Live Project
-    </a>
+        <!-- Blazor Portfolio -->
+        <div class="col-md-6">
+            <div class="card shadow-sm h-100">
+                <div class="card-body">
+                    <h5 class="card-title">Blazor Portfolio</h5>
+                    <p class="card-text">
+                        This portfolio site was developed as a full-stack showcase using modern .NET tools. It demonstrates my ability to build responsive web apps using Blazor WebAssembly, automate deployments with GitHub Actions, and maintain clean component-based architecture with C#.
+                    </p>
+                    <ul class="list-unstyled">
+                        <li>✅ Built with .NET 8 and Blazor WebAssembly</li>
+                        <li>✅ Automatically deployed to Azure Static Web Apps via CI/CD pipeline</li>
+                        <li>✅ Uses Bootstrap 5 for responsive layout and custom CSS for styling</li>
+                        <li>✅ Demonstrates component reuse, Razor Pages, and modern state management in Blazor</li>
+                    </ul>
+                    <a href="https://github.com/JohnCarra/Blazor-Portfolio" target="_blank" class="btn btn-outline-primary mt-3">
+                        View on GitHub
+                    </a>
+                    <a href="https://happy-hill-0a1a08910.6.azurestaticapps.net/" target="_blank" class="btn btn-outline-secondary mt-3 ms-2">
+                        View Live Site
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
 </section>
